@@ -15,11 +15,6 @@
                             echo $row["stars"] > $i ? "<i class='fa fa-star' aria-hidden='true'></i>" : "<i class='fa fa-star-o' aria-hidden='true'></i>";
                         }
                     ?>
-                        <!-- <i class='fa fa-star' aria-hidden='true'></i>
-                        <i class='fa fa-star' aria-hidden='true'></i>
-                        <i class='fa fa-star' aria-hidden='true'></i>
-                        <i class='fa fa-star-o' aria-hidden='true'></i>
-                        <i class='fa fa-star-o' aria-hidden='true'></i> -->
                     </div>
                 </div>
                 <div class="description">

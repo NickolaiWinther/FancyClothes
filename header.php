@@ -59,16 +59,18 @@
                 <li><a href="#">Handelsbetingelser</a></li>
                 <li><a href="#">Om os</a></li>
 
-                <?php if(isset($_SESSION["username"])) { ?>
-
+                <?php if(!isset($_SESSION["username"]) || $_SESSION["accessLevel"] == 1) { ?>
+                    <!-- Hvis man ikke er logget ind, eller har accesslevel 1 -->
+                    <li><a href='register.php'>Opret bruger</a></li>
+                    
+                    <?php } if(isset($_SESSION["accessLevel"])) { ?>
+                    <!-- Hvis man er logget ind -->
                     <li><a href='assets/logout.php' class=''>Log ud</a></li>
-                
-                <?php } else { ?>
 
+                    <?php } else { ?>
+                    <!-- Hvis man ikke er logget ind -->
                     <li><a href='#' class='loginBtn'>Log ind</a></li>
-                    <li><a href='assets/register.php'>Opret bruger</a></li>
-
-                <?php } ?>
+                    <?php } ?>
             </ul>
         </nav>
         <div class="basket">
@@ -101,60 +103,4 @@
     <hr class="hide400">
     <h1 class="tagline">FancyClothes.DK - tøj, kvalitet, simpelt!</h1>
     <hr>
-    <?php if(isset($_SESSION["accessLevel"])) { ?>
-
-    <div class="createArticle container">
-
-
-        <h3 class="center errorMsg">Opret ny vare:</h3>
-        <form action="assets/createProduct.php" method="post" enctype="multipart/form-data">
-            <div>
-                <label for="imgSrc">Billede</label>
-                <input type="file" id="imgSrc" name="imgSrc" placeholder="Vælg billede" required>
-            </div>
-            <div>
-                <label for="imgAlt">Alt tekst</label>
-                <input type="text" id="imgAlt" name="imgAlt" placeholder="Billedets alttekst..." required>
-            </div>
-            <div>
-                <label for="heading">Overskrift</label>
-                <input type="text" id="heading" name="heading" placeholder="Overskrift..." required>
-            </div>
-            <div>
-                <label for="price">Overskrift</label>
-                <input type="text" id="price" name="price" placeholder="Pris..." required>
-            </div>
-            <div>
-                <label for="content">Brødtekst</label>
-                <textarea name="content" id="content" cols="30" rows="10" placeholder="Brødtekst..." required></textarea>
-            </div>
-            <div>
-                <label for="stars">Antal stjerner</label>
-                <select name="stars" id="stars">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-            <div>
-                <label for="categoryId">Kategori</label>
-                <select name="categoryId" id="categoryId" required>
-                    <option value="1">Bukser</option>
-                    <option value="2">Jakker</option>
-                    <option value="3">Skjorter</option>
-                    <option value="4">Strik</option>
-                    <option value="5">T-shirts og tanktops</option>
-                    <option value="6">Tasker</option>
-                    <option value="7">Sko</option>
-                </select>
-            </div>
-            <div>
-                <input type="submit" value="Opret" name="value">
-            </div>
-        </form>
-
-    </div>
-    <?php } ?>
-    <main class="container">
+    

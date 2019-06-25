@@ -1,7 +1,63 @@
 <?php 
     require("header.php");
 ?>
+<?php if(isset($_SESSION["accessLevel"])) { ?>
 
+<div class="createArticle container">
+
+
+    <h3 class="center errorMsg">Opret ny vare:</h3>
+    <form action="assets/createProduct.php" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="imgSrc">Billede</label>
+            <input type="file" id="imgSrc" name="imgSrc" placeholder="Vælg billede" required>
+        </div>
+        <div>
+            <label for="imgAlt">Alt tekst</label>
+            <input type="text" id="imgAlt" name="imgAlt" placeholder="Billedets alttekst..." required>
+        </div>
+        <div>
+            <label for="heading">Overskrift</label>
+            <input type="text" id="heading" name="heading" placeholder="Overskrift..." required>
+        </div>
+        <div>
+            <label for="price">Overskrift</label>
+            <input type="text" id="price" name="price" placeholder="Pris..." required>
+        </div>
+        <div>
+            <label for="content">Brødtekst</label>
+            <textarea name="content" id="content" cols="30" rows="10" placeholder="Brødtekst..." required></textarea>
+        </div>
+        <div>
+            <label for="stars">Antal stjerner</label>
+            <select name="stars" id="stars">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div>
+            <label for="categoryId">Kategori</label>
+            <select name="categoryId" id="categoryId" required>
+                <option value="1">Bukser</option>
+                <option value="2">Jakker</option>
+                <option value="3">Skjorter</option>
+                <option value="4">Strik</option>
+                <option value="5">T-shirts og tanktops</option>
+                <option value="6">Tasker</option>
+                <option value="7">Sko</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Opret" name="value">
+        </div>
+    </form>
+
+</div>
+<?php } ?>
+<main class="container">
     <aside>
         <div class="categories">
             <div class="catTop">
@@ -57,7 +113,6 @@
         </div>
     </div>
 </main>
-<hr>
 
 <?php 
     require("footer.php"); 

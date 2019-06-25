@@ -1,3 +1,4 @@
+<hr>
 <footer>
     <div class="contact container">
         <ul>
