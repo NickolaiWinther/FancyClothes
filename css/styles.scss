@@ -140,10 +140,19 @@ $navFont: "Oswald", sans-serif;
 //
 // CreateArticle
 //
+.createArticle h3 {
+    font-size: 2rem;
+    color: red;
+}
 
-.createArticle form > div {
-    display: flex;
-    padding: 10px;
+.createArticle {
+    .red {
+        border: 1px solid red;
+    }
+    form > div {
+        display: flex;
+        padding: 10px;
+    }
 
     label {
         width: 200px;
@@ -433,7 +442,7 @@ hr {
 
 .errorMsg {
     color: red;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .center {
@@ -453,6 +462,54 @@ h6 {
 
 .bold {
     font-weight: bold;
+}
+//
+// Slide knap
+//
+.scrollToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    color: #777;
+    z-index: 10;
+    font-size: 2rem;
+    border: 5px solid #777;
+    border-radius: 50%;
+    padding: 5px;
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &.hide {
+        right: -50px;
+        transform: scale(0.1);
+    }
+}
+
+//
+// Slideshow
+//
+.slideshow.container {
+    position: relative;
+    height: 35vw;
+    width: 30vw;
+
+    figure {
+        position: absolute;
+        height: 30vw;
+        transition: 0.3s;
+        margin: 0 auto;
+
+        &.hide {
+            opacity: 0;
+        }
+
+        img {
+            height: 30vw;
+        }
+    }
 }
 
 // Mediaqueries

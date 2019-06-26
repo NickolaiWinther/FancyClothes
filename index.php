@@ -8,7 +8,7 @@ $metaDescription = "Velkommen til FancyClothes! Tøj, kvalitet, simpelt!";
 <div class="createArticle container">
 
 
-    <h3 class="center errorMsg">Opret ny vare:</h3>
+    <h3 class="center ">Opret ny vare:</h3>
     <form action="assets/createProduct.php" method="post" enctype="multipart/form-data">
         <div>
             <label for="imgSrc">Billede</label>
@@ -117,6 +117,9 @@ $metaDescription = "Velkommen til FancyClothes! Tøj, kvalitet, simpelt!";
 
             <?php 
                 require("assets/getProducts.php");
+                if ($noProducts) {
+                    echo "<p class='errorMsg'>Vi kunne desværre ikke finde nogle varer med den kategori</p>";
+                }
             ?>
         </div>
     </div>

@@ -147,6 +147,15 @@
   text-decoration: none;
 }
 
+.createArticle h3 {
+  font-size: 2rem;
+  color: red;
+}
+
+.createArticle .red {
+  border: 1px solid red;
+}
+
 .createArticle form > div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -154,12 +163,12 @@
   padding: 10px;
 }
 
-.createArticle form > div label {
+.createArticle label {
   width: 200px;
 }
 
-.createArticle form > div input,
-.createArticle form > div textarea {
+.createArticle input,
+.createArticle textarea {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -481,7 +490,7 @@ hr {
 
 .errorMsg {
   color: red;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .center {
@@ -500,6 +509,53 @@ h6 {
 
 .bold {
   font-weight: bold;
+}
+
+.scrollToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  color: #777;
+  z-index: 10;
+  font-size: 2rem;
+  border: 5px solid #777;
+  border-radius: 50%;
+  padding: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.scrollToTop:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.scrollToTop.hide {
+  right: -50px;
+  -webkit-transform: scale(0.1);
+          transform: scale(0.1);
+}
+
+.slideshow.container {
+  position: relative;
+  height: 35vw;
+  width: 30vw;
+}
+
+.slideshow.container figure {
+  position: absolute;
+  height: 30vw;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 0 auto;
+}
+
+.slideshow.container figure.hide {
+  opacity: 0;
+}
+
+.slideshow.container figure img {
+  height: 30vw;
 }
 
 @media screen and (max-width: 1700px) {

@@ -54,15 +54,15 @@
     <div class="container navbar">
         <nav>
             <ul>
-                <li class="active"><a href="index.php">Forside</a></li>
+                <li class="<?php echo $title == "Forside" ? "active" : "" ?>"><a href="index.php">Forside</a></li>
                 <li><a href="#">Produkter</a></li>
                 <li><a href="#">Nyheder</a></li>
                 <li><a href="#">Handelsbetingelser</a></li>
-                <li><a href="#">Om os</a></li>
+                <li class="<?php echo $title == "Om os" ? "active" : "" ?>"><a href="about.php">Om os</a></li>
 
                 <?php if(!isset($_SESSION["username"]) || $_SESSION["accessLevel"] == 1) { ?>
                     <!-- Hvis man ikke er logget ind, eller har accesslevel 1 -->
-                    <li><a href='register.php'>Opret bruger</a></li>
+                    <li class="<?php echo $title == "Opret bruger" ? "active" : "" ?>"><a href='register.php' >Opret bruger</a></li>
                     
                     <?php } if(isset($_SESSION["accessLevel"])) { ?>
                     <!-- Hvis man er logget ind -->
@@ -84,7 +84,9 @@
         </div>
     </div>
     <div class="login container">
+        <!-- Fejlbesked ved login -->
         <?php echo isset($_GET["error"]) == "login" ? "<p class='errormsg'>Fejl ved login</p>" : "" ?>
+
         <form action="./assets/login.php" method="post">
             <label for="formUsername">Bruger:</label>
             <input type="text" id="formUsername" name="formUsername" placeholder="Brugernavn" 
@@ -93,7 +95,7 @@
             <label for="formPassword">Password:</label>
             <input type="password" id="formPassword" name="formPassword" placeholder="Password" required>
 
-            <!-- Den nuværende side -->
+            <!-- Den nuværende side, som man bliver sendt tilbage til, når man logger ind -->
             <input type="text" name="surrentPage" 
             value="<?php echo basename($_SERVER["PHP_SELF"]) ?>" hidden>
 
