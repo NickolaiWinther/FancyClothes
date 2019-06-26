@@ -8,12 +8,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Forside | FancyClothes.dk</title>
-    <meta name="description" content="Velkommen til FancyClothes.dk">
+    <title><?php echo $title ?> | FancyClothes.dk</title>
+    <meta name="description" content="<?php echo $metaDescription ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" href="img/homeicon.png" >
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Karla|Lato|Oswald" rel="stylesheet">

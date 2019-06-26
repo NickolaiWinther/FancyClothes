@@ -1,5 +1,8 @@
 <?php 
+$title = "Opret bruger";
+$metaDescription = "Opret bruger hos FancyClothes.dk";
     require("header.php");
+
 
     if (isset($_SESSION['username']) && $_SESSION['accessLevel'] != 1) {
         header ("location: index.php");

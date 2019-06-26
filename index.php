@@ -1,4 +1,6 @@
 <?php 
+$title = "Forside";
+$metaDescription = "Velkommen til FancyClothes! Tøj, kvalitet, simpelt!";
     require("header.php");
 ?>
 <?php if(isset($_SESSION["accessLevel"])) { ?>
