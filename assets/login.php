@@ -1,6 +1,7 @@
 <?php 
     $formUsername = $_POST["formUsername"];
     $formPassword = $_POST["formPassword"];
+    $currentPage = $_POST["currentPage"];
 
     require "connect.php";
 
@@ -12,7 +13,7 @@
 
     if(empty($row = $statement->fetch()) ){
         echo "Fejl i password eller username";
-        header("location: ../index.php?error=login&email=$email");
+        header("location: ../index.php?error=login&loginError=$formUsername");
     }else{
         session_start();
         $_SESSION['username'] = $row['username'];

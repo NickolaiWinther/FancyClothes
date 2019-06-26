@@ -83,13 +83,22 @@
         </div>
     </div>
     <div class="login container">
+        <?php echo isset($_GET["error"]) == "login" ? "<p class='errormsg'>Fejl ved login</p>" : "" ?>
         <form action="./assets/login.php" method="post">
             <label for="formUsername">Bruger:</label>
-            <input type="text" id="formUsername" name="formUsername" placeholder="Brugernavn" required>
+            <input type="text" id="formUsername" name="formUsername" placeholder="Brugernavn" 
+            value="<?php echo isset($_GET["loginError"]) ? $_GET["loginError"] : "" ?>" required>
+
             <label for="formPassword">Password:</label>
             <input type="password" id="formPassword" name="formPassword" placeholder="Password" required>
+
+            <!-- Den nuværende side -->
+            <input type="text" name="surrentPage" 
+            value="<?php echo basename($_SERVER["PHP_SELF"]) ?>" hidden>
+
             <input type="submit" value="Log ind">
         </form>
+
         <a id="newUser" href="register.php">Ny bruger?</a>
     </div>
     <hr>

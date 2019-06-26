@@ -65,12 +65,18 @@
             </div>
             <div class="catMain">
                 <ul>
-                    <li><a href="#">Jakker</a></li>
+                    <?php require("assets/getCategories.php"); 
+                    foreach ($categories as $category) { ?>
+
+                        <li><a href="index.php?category=<?php echo $category ?>"><?php echo $category ?></a></li>
+
+                    <?php } ?>
+                    <!-- <li><a href="#">Jakker</a></li>
                     <li><a href="#">Bukser</a></li>
                     <li><a href="#">Skjorter</a></li>
                     <li><a href="#">Strik</a></li>
                     <li><a href="#">T-shirts & Tank tops</a></li>
-                    <li><a href="#">Tasker</a></li>
+                    <li><a href="#">Tasker</a></li> -->
                 </ul>
             </div>
         </div>
@@ -108,7 +114,7 @@
         <div class="frontProducts">
 
             <?php 
-                require("assets/getProducts.php") 
+                require("assets/getProducts.php");
             ?>
         </div>
     </div>

@@ -1,3 +1,5 @@
 1. Login knapper
 
-2. 
+2. Create user og fejlhåndtering
+
+3. Kategorier
